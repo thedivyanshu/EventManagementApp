@@ -1,0 +1,56 @@
+<div class="background">
+  <div class="container">
+    <div class="form-box">
+      <h2>Add Employee</h2>
+
+      <form>
+        <div class="form-group">
+          <label for="first_name">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="first_name"
+            [(ngModel)]="first_name"
+            name="first_name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="last_name">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="last_name"
+            [(ngModel)]="last_name"
+            name="last_name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            [(ngModel)]="email"
+            name="email"
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          (click)="addEmployee(first_name, last_name, email)"
+        >
+          Submit
+        </button>
+        <button type="button" class="btn btn-secondary" routerLink="/employees">
+          Back
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

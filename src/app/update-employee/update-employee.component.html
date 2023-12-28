@@ -1,0 +1,51 @@
+<div class="background">
+  <div class="container">
+    <div class="update-box">
+      <h2>Update Employee</h2>
+      <form>
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            [ngModel]="employee?.first_name"
+            (ngModelChange)="employee.first_name = $event"
+            name="firstName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            [ngModel]="employee?.last_name"
+            (ngModelChange)="employee.last_name = $event"
+            name="lastName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            [ngModel]="employee?.email"
+            (ngModelChange)="employee.email = $event"
+            name="email"
+          />
+        </div>
+        <button class="btn btn-primary" (click)="updateEmployee()">
+          Update
+        </button>
+        <button
+          class="btn btn-secondary"
+          [routerLink]="['/employees', employee.id]"
+        >
+          Back
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

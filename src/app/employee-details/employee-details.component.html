@@ -1,0 +1,41 @@
+<div class="container">
+  <h4>
+    Details of
+    <strong>{{ employee?.first_name }} {{ employee?.last_name }}</strong>
+  </h4>
+
+  <div *ngIf="employee">
+    <table class="table">
+      <tr>
+        <th>Employee ID</th>
+        <td>{{ employee.id }}</td>
+      </tr>
+      <tr>
+        <th>First Name</th>
+        <td>{{ employee.first_name }}</td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td>{{ employee.last_name }}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{ employee.email }}</td>
+      </tr>
+    </table>
+
+    <button class="btn btn-primary" (click)="goHomePage()">
+      Employee List
+    </button>
+    <button class="btn btn-primary" (click)="updateEmployee(employee.id)">
+      Update
+    </button>
+    <button class="btn btn-danger" (click)="deleteEmployee(employee.id)">
+      Delete
+    </button>
+  </div>
+
+  <div *ngIf="!employee">
+    <p>No employee details found.</p>
+  </div>
+</div>
